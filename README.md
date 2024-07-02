@@ -1,3 +1,29 @@
+# unet.cu for AMD devices
+This is a fork of [Chen Lu's unet.cu](https://github.com/clu0/unet.cu) supporting AMD GPUs. 
+
+
+## Quick Start (AMD targets)
+
+Install ROCm 6.1.2, checkout the repo, and perform the following steps:
+
+```
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.0
+gunzip data/elephant_train.bin.gz # prepare the data
+python train_unet.py --init_model_only True # need to initialize model weights via python
+make train_unetamd
+./train_unetamd
+```
+
+The Makefile will build for all AMD targets detected in your machine, but if you wish to only only build for a particular target (e.g., if you have a iGPU that you want to ignore), pass the target arch with AMDGPU_TARGETS like so: 
+
+```
+make train_gpt2amd AMDGPU_TARGETS=gfx1100
+```
+
+---
+[ORIGINAL README]
+---
+
 # unet.cu
 
 TL;DR:

@@ -1,4 +1,3 @@
-#include <cuda_device_runtime_api.h>
 #include <cuda_runtime_api.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,8 +5,11 @@
 #include "utils.cuh"
 #include <curand_kernel.h>
 #include <cooperative_groups.h>
+#include <amd_common.cuh>
+#ifndef BUILD_AMD
 #include <cooperative_groups/reduce.h>
-
+#include <cuda_device_runtime_api.h>
+#endif
 #include <string.h>
 #include <sys/stat.h> // For mkdir
 #include <sys/types.h> // For mode_t
