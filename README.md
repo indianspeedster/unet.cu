@@ -19,6 +19,12 @@ The Makefile will build for all AMD targets detected in your machine, but if you
 ```
 make train_gpt2amd AMDGPU_TARGETS=gfx1100
 ```
+## Upcoming updates
+More optimized and faster kernels on the way ....
+
+___
+
+Feel free to checkout [AMD support](https://github.com/anthonix/llm.c/) for Andrej Karpathy's llm.c by [Anthonix](https://x.com/realAnthonix).
 
 ---
 [ORIGINAL README]
